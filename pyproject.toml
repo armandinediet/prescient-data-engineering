@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "prescient"
+version = "0.1.0"
+description = "Data engineering sandbox for live coding and take-home exercises"
+authors = ["Armando <armando_jose07@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
