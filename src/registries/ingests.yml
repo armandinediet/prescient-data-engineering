@@ -1,0 +1,6 @@
+ingests:
+  - name: openweather_forecast
+    type: openweather_forecast
+    schedule: "*/30 * * * *"
+    enabled: true
+    config: openweather.yaml

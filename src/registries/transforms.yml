@@ -1,0 +1,6 @@
+transforms:
+  - name: weather_curated
+    type: dbt
+    selector: "weather_forecast"
+    schedule: "0 * * * *"
+    enabled: true

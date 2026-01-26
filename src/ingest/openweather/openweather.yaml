@@ -1,0 +1,5 @@
+units: metric
+cities:
+  - id: 3451190
+    name: Rio de Janeiro
+    country: BR

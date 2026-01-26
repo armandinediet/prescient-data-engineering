@@ -1,0 +1,32 @@
+[0m19:22:10.268935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b2c7b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b820440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb2c080>]}
+
+
+============================== 19:22:10.274442 | 20765526-bb20-4d4f-b631-1221f5af4a74 ==============================
+[0m19:22:10.274442 [info ] [MainThread]: Running with dbt=1.11.2
+[0m19:22:10.275197 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'log_path': 'logs', 'use_colors': 'True', 'invocation_command': 'dbt run --profiles-dir dbt --select weather', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'static_parser': 'True', 'fail_fast': 'False', 'debug': 'False', 'profiles_dir': 'dbt', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'empty': 'False', 'printer_width': '80', 'warn_error': 'None', 'version_check': 'True', 'quiet': 'False', 'no_print': 'None', 'partial_parse': 'True', 'log_format': 'default', 'introspect': 'True', 'use_experimental_parser': 'False'}
+[0m19:22:10.275957 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/armandorodrigues/Documents/github/prescient/weather-platform-B-ready/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:22:10.279920 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.106035225, "process_in_blocks": "0", "process_kernel_time": 0.382785, "process_mem_max_rss": "99057664", "process_out_blocks": "0", "process_user_time": 2.417249}
+[0m19:22:10.280706 [debug] [MainThread]: Command `dbt run` failed at 19:22:10.280555 after 0.11 seconds
+[0m19:22:10.281233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b31e0f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6ed760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bb2ddf0>]}
+[0m19:22:10.281765 [debug] [MainThread]: Flushing usage events
+[0m19:22:10.896282 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:22:53.704793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051a4d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057442f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105afbfe0>]}
+
+
+============================== 19:22:53.709554 | eebefa81-7f76-4d0c-b302-d39e4e9fc5ca ==============================
+[0m19:22:53.709554 [info ] [MainThread]: Running with dbt=1.11.2
+[0m19:22:53.710296 [debug] [MainThread]: running dbt with arguments {'log_path': 'logs', 'partial_parse': 'True', 'target_path': 'None', 'use_colors': 'True', 'debug': 'False', 'version_check': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'fail_fast': 'False', 'write_json': 'True', 'log_format': 'default', 'warn_error': 'None', 'empty': 'False', 'profiles_dir': 'dbt', 'printer_width': '80', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --profiles-dir dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'quiet': 'False', 'static_parser': 'True'}
+[0m19:22:53.711014 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/armandorodrigues/Documents/github/prescient/weather-platform-B-ready/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m19:22:53.713465 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.08993608, "process_in_blocks": "0", "process_kernel_time": 0.279917, "process_mem_max_rss": "98283520", "process_out_blocks": "0", "process_user_time": 2.06634}
+[0m19:22:53.714150 [debug] [MainThread]: Command `dbt run` failed at 19:22:53.714000 after 0.09 seconds
+[0m19:22:53.714651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105afbfe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051a4d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105254680>]}
+[0m19:22:53.715146 [debug] [MainThread]: Flushing usage events
+[0m19:22:54.298782 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,7 @@
+selectors:
+  - name: weather_forecast
+    description: Run full weather forecast pipeline (unnest → dedup → mart)
+    definition:
+      intersection:
+        - union:
+            - +weather_forecast

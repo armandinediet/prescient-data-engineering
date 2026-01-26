@@ -1,0 +1,76 @@
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/armandorodrigues/Documents/github/prescient/src/cli.py:144 in         │
+│ scheduler                                                                    │
+│                                                                              │
+│   141 │   transform_registry_path = str(Path(transform_registry).resolve())  │
+│   142 │   project_root_path = str(Path(project_root).resolve())              │
+│   143 │                                                                      │
+│ ❱ 144 │   settings = load_settings()                                         │
+│   145 │   engine = make_engine(settings.database_url)                        │
+│   146 │                                                                      │
+│   147 │   summary = run_due_jobs_once(                                       │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │         ingest_registry = 'src/registries/ingests.yml'                   │ │
+│ │    ingest_registry_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ │                    once = True                                           │ │
+│ │            project_root = '.'                                            │ │
+│ │       project_root_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ │      transform_registry = 'src/registries/transforms.yml'                │ │
+│ │ transform_registry_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /Users/armandorodrigues/Documents/github/prescient/src/config.py:13 in       │
+│ load_settings                                                                │
+│                                                                              │
+│   10 def load_settings() -> Settings:                                        │
+│   11 │   db = os.getenv("DATABASE_URL", "").strip()                          │
+│   12 │   if not db:                                                          │
+│ ❱ 13 │   │   raise RuntimeError("DATABASE_URL is required")                  │
+│   14 │   key = os.getenv("OPENWEATHER_API_KEY", "").strip() or None          │
+│   15 │   return Settings(database_url=db, openweather_api_key=key)           │
+│   16                                                                         │
+│                                                                              │
+│ ╭─ locals ─╮                                                                 │
+│ │ db = ''  │                                                                 │
+│ ╰──────────╯                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: DATABASE_URL is required
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/armandorodrigues/Documents/github/prescient/src/cli.py:144 in         │
+│ scheduler                                                                    │
+│                                                                              │
+│   141 │   transform_registry_path = str(Path(transform_registry).resolve())  │
+│   142 │   project_root_path = str(Path(project_root).resolve())              │
+│   143 │                                                                      │
+│ ❱ 144 │   settings = load_settings()                                         │
+│   145 │   engine = make_engine(settings.database_url)                        │
+│   146 │                                                                      │
+│   147 │   summary = run_due_jobs_once(                                       │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │         ingest_registry = 'src/registries/ingests.yml'                   │ │
+│ │    ingest_registry_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ │                    once = True                                           │ │
+│ │            project_root = '.'                                            │ │
+│ │       project_root_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ │      transform_registry = 'src/registries/transforms.yml'                │ │
+│ │ transform_registry_path = '/Users/armandorodrigues/Documents/github/pre… │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /Users/armandorodrigues/Documents/github/prescient/src/config.py:13 in       │
+│ load_settings                                                                │
+│                                                                              │
+│   10 def load_settings() -> Settings:                                        │
+│   11 │   db = os.getenv("DATABASE_URL", "").strip()                          │
+│   12 │   if not db:                                                          │
+│ ❱ 13 │   │   raise RuntimeError("DATABASE_URL is required")                  │
+│   14 │   key = os.getenv("OPENWEATHER_API_KEY", "").strip() or None          │
+│   15 │   return Settings(database_url=db, openweather_api_key=key)           │
+│   16                                                                         │
+│                                                                              │
+│ ╭─ locals ─╮                                                                 │
+│ │ db = ''  │                                                                 │
+│ ╰──────────╯                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: DATABASE_URL is required
