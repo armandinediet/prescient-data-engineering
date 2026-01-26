@@ -106,9 +106,7 @@ poetry run dbt test --project-dir dbt --profiles-dir dbt
 
 ### scheduling
 ```bash
-crontab <<EOF
-* * * * * cd /Users/armandorodrigues/Documents/github/prescient && set -a && source .env && set +a && /Users/armandorodrigues/.pyenv/shims/poetry run python -m cli scheduler --once >> logs/scheduler.log 2>&1
-EOF
+ poetry run python -m cli server
 ```
 ### remove all cron
 ```bash
