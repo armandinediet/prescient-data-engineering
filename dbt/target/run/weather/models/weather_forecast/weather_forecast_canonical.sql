@@ -1,10 +1,14 @@
-{{ config(
-    materialized="table",
-    schema="mart"
-) }}
+
+  create view "weather"."staging"."weather_forecast_canonical__dbt_tmp"
+    
+    
+  as (
+    
 
 select
   -- grain: one row per city + forecast timestamp
+  concat(city_id, cast(forecast_dt_txt as text)) as unique_id,
+  --null as unique_id,
   city_id,
   city_name,
   country,
@@ -40,4 +44,5 @@ select
   -- lineage / freshness
   ingested_at
 
-from {{ ref('weather_forecast_dedup') }}
+from "weather"."staging"."weather_forecast_dedup"
+  );

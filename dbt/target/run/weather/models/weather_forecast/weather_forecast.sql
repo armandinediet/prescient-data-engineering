@@ -12,6 +12,7 @@
 
 select
   -- grain: one row per city + forecast timestamp
+  unique_id,
   city_id,
   city_name,
   country,
@@ -47,6 +48,6 @@ select
   -- lineage / freshness
   ingested_at
 
-from "weather"."staging"."weather_forecast_dedup"
+from "weather"."staging"."weather_forecast_canonical"
   );
   

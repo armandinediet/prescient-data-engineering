@@ -4,4 +4,4 @@ selectors:
     definition:
       intersection:
         - union:
-            - +weather_forecast
+            - +weather_forecast_cardinal
