@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: weather_forecast_cardinal
+    description: >
+      Final published weather forecast mart.
+      One row per city and forecast timestamp.
+      This model is gated by pre-release validations and only updates
+      when all data quality checks pass.
+
+    columns:
+      - name: unique_id
+        description: Unique identifier for the city + forecast timestamp grain.
+
+      - name: city_id
+        description: Internal identifier of the city.
+
+      - name: city_name
+        description: City name as provided by the weather source.
+
+      - name: country
+        description: ISO country code of the city.
+
+      - name: lat
+        description: Latitude of the city.
+
+      - name: lon
+        description: Longitude of the city.
+
+      - name: timezone_offset_sec
+        description: Timezone offset from UTC in seconds for the city.
+
+      - name: forecast_dt_unix
+        description: Forecast timestamp in Unix epoch seconds.
+
+      - name: forecast_dt_txt
+        description: Forecast timestamp as human-readable text.
+
+      - name: temp
+        description: Forecasted temperature.
+
+      - name: feels_like
+        description: Perceived temperature accounting for wind and humidity.
+
+      - name: temp_min
+        description: Minimum forecasted temperature.
+
+      - name: temp_max
+        description: Maximum forecasted temperature.
+
+      - name: pressure
+        description: Atmospheric pressure at sea level.
+
+      - name: humidity
+        description: Relative humidity percentage.
+
+      - name: clouds_all
+        description: Cloudiness percentage.
+
+      - name: visibility
+        description: Visibility in meters.
+
+      - name: wind_speed
+        description: Wind speed.
+
+      - name: wind_deg
+        description: Wind direction in degrees.
+
+      - name: wind_gust
+        description: Wind gust speed.
+
+      - name: pop
+        description: Probability of precipitation.
+
+      - name: rain_3h
+        description: Rain volume for the last 3 hours, in millimeters.
+
+      - name: snow_3h
+        description: Snow volume for the last 3 hours, in millimeters.
+
+      - name: pod
+        description: Part of day indicator (day or night).
+
+      - name: weather_id
+        description: Weather condition identifier from the source system.
+
+      - name: weather_main
+        description: High-level weather condition (e.g. Rain, Clear).
+
+      - name: weather_description
+        description: Detailed weather condition description.
+
+      - name: weather_icon
+        description: Weather icon code from the source system.
+
+      - name: ingested_at
+        description: Timestamp indicating when the record was ingested into the warehouse.
