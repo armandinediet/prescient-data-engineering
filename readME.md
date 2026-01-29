@@ -59,9 +59,13 @@ poetry install
 ### Search cities
 ```bash
 gunzip -c city.list.json.gz \
-| jq '.[] | select(.name=="São Paulo" and .country=="BR")'
+| jq '.[] | select(.name=="Belém" and .country=="BR")'
 ```
-
+### init SQL ops table
+```bash
+docker exec -i $(docker ps -qf "ancestor=postgres:15") \
+  psql -U postgres -d weather < sql/001_init.sql
+```
 
 ## Run the pipeline
 
@@ -126,5 +130,36 @@ This makes it easy to add new ingests without changing orchestration code: add a
 * Flattening happens before dbt to avoid complex JSON parsing in SQL and to keep dbt models clean and portable.
 * This pipeline is intentionally simple and can be deployed as a container + cron schedule in production.
 
-````
+
+
+
+# Creating new Pipelines
+### 1. Create the image
+- Add the python code in /src/ingest/new_pipeline_name
+- This image needs to always call the `generic_raw_insert` function to ensure creation of raw table
+
+### 2. Add ingest in registry
+- Add in src/registries/ingests.yml, register both the pipeline_name and the ingest_type (this one will be used to point to the correct image in the CLI)
+
+### 3. Add the config file
+- create the referenced config file of the previous step in /Users/armandorodrigues/Documents/github/prescient/ingests/openweather.yaml
+- it's important to always include the raw_table_name as a parameter in the image or the config
+
+### 4. Add the "image" in the INGEST_PLUGINS map in CLI
+- key of the map is the ingest_type that calls the image
+
+### 5. Add the source in DBT
+- add the raw source in `dbt/models/sources.yml`
+
+### 6. Create the DBT models
+- regular SQL modelling
+
+### 7. add the selector
+- the selector is the group of tables that will be run during the transform step
+
+### 8. add the transform to the registry
+- register that transform and the selector in src/registries/transforms.yml
+
+# DONE
+
 
