@@ -78,28 +78,12 @@ order by requested_at desc
 limit 20;
 ```
 
-### B) Stage / Flatten (pandas)
-
-```bash
-poetry run python -m cli stage --job openweather_forecast_flatten
-```
-
-Check:
-
-```sql
-select city_id, forecast_dt, temp, humidity
-from ext_openweather_forecast
-order by forecast_dt desc
-limit 20;
-```
-
-### C) Transform (dbt)
+### B) Transform (dbt)
 
 Run from repository root:
 
 ```bash
-poetry run dbt run --project-dir dbt --profiles-dir dbt
-poetry run dbt test --project-dir dbt --profiles-dir dbt
+poetry run python -m cli transform --job weather_curated    
 ```
 
 ### scheduling
