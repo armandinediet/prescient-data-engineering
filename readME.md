@@ -1,10 +1,4 @@
-Beleza. Aqui vai um **README pronto** (copiar e colar) e depois um jeito **simples e não caótico** de pôr cron.
 
----
-
-## README.md (cola na raiz)
-
-````md
 # Weather Platform (OpenWeather → Postgres → dbt)
 
 Small, production-minded data pipeline that ingests OpenWeather 5-day / 3-hour forecast data and loads it into Postgres.
